@@ -1,0 +1,15 @@
+{
+  "name": "@3s/tailwind-animations",
+  "version": "0.0.1",
+  "description": "Tailwind CSS plugin to add animations to your wbseites",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jose Rafael Sissa Mendoza",
+  "license": "ISC",
+  "devDependencies": {
+    "standard": "^17.1.0"
+  }
+}
