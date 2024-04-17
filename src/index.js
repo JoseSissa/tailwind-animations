@@ -5,7 +5,75 @@ import theme from './theme.js'
 // JSDoc para tipar la sifuiente configuración sin usar typeScript
 /** @type {import('tailwindcss/types/config').PluginCreator} */
 const pluginCreator = (api) => {
-    // console.log('pluginCreator')
+    const { theme, matchUtilities, addUtilities } = api
+
+    // Refactorizando cada uno de los matchUtilities para no repetir código
+    const dynamicUtils = {
+        'animate-delay': { css: 'animation-delay', values: theme('animationDelay') },
+        'animate-duration': { css: 'animation-duration', values: theme('animationDuration') }
+    }
+
+    // matchUtilities({
+    //     'animate-delay': value => ({
+    //         'animation-delay': value
+    //     })
+    // }, {
+    //     values: theme('animationDelay')
+    // })
+
+    // matchUtilities({
+    //     'animate-duration': value => ({
+    //         'animation-duration': value
+    //     })
+    // }, {
+    //     values: theme('animationDuration')
+    // })
+
+    Object.entries(dynamicUtils).forEach(([name, { css, values }]) => {
+        matchUtilities({
+            [name]: value => ({
+                [css]: value
+            })
+        }, {
+            values
+        })
+    });
+
+    addUtilities({
+        '.animate-ease': {
+            'animation-timing-function': 'ease'
+        },
+        '.animate-ease-in': {
+            'animation-timing-function': 'ease-in'
+        },
+        '.animate-ease-out': {
+            'animation-timing-function': 'ease-out'
+        },
+        '.animate-ease-in-out': {
+            'animation-timing-function': 'ease-in-out'
+        },
+        '.animate-linear': {
+            'animation-timing-function': 'linear'
+        },
+        '.animate-direction-normal': {
+            'animation-direction': 'normal'
+        },
+        '.animate-direction-reverse': {
+            'animation-direction': 'reverse'
+        },
+        '.animate-direction-alternate': {
+            'animation-direction': 'alternate'
+        },
+        '.animate-direction-alternate-reverse': {
+            'animation-direction': 'alternate-reverse'
+        },
+        '.animate-play-running': {
+            'animation-play-state': 'running'
+        },
+        '.animate-play-paused': {
+            'animation-play-state': 'paused'
+        }
+    })
 }
 
 /** @type {import('tailwindcss/types/config').Config} */

@@ -418,5 +418,40 @@ export default {
           '50%': { transform: 'scale(1.05)', opacity: '0.5' },
           '100%': { transform: 'scale(1)', opacity: '1' }
         }
+      },
+      animationDelay: {
+        none: '0ms',
+        0: '0ms',
+        100: '100ms',
+        150: '150ms',
+        200: '200ms',
+        250: '250ms',
+        300: '300ms',
+        400: '400ms',
+        500: '500ms',
+        700: '700ms',
+        800: '800ms',
+        900: '900ms',
+        1000: '1000ms'
+      },
+      animationDuration: {
+        none: '0ms',
+        slower: '500ms',
+        slow: '400ms',
+        normal: '300ms',
+        fast: '200ms',
+        faster: '100ms',
+        0: '0ms',
+        100: '100ms',
+        150: '150ms',
+        200: '200ms',
+        250: '250ms',
+        300: '300ms',
+        400: '400ms',
+        500: '500ms',
+        700: '700ms',
+        800: '800ms',
+        900: '900ms',
+        1000: '1000ms'
       }
 }
