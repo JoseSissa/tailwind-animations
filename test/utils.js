@@ -3,7 +3,7 @@ import postcss from 'postcss'
 import minify from '@csstools/postcss-minify'
 import animationPlugin from '../src/index.js'
 
-const TAILWIND_BASE = '@tailwindcss utilities;'
+const TAILWIND_BASE = '@tailwind utilities;'
 
 export function generatePluginCss (options = {}) {
     const { inline = '', content = '' } = options
@@ -21,7 +21,3 @@ export function generatePluginCss (options = {}) {
         })
         .then(result => result.css)
 }
-
-console.log(await generatePluginCss({
-    content: '<div class"animate-rotate-90">Hello</div>'
-}))
