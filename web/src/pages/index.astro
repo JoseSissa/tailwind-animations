@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import theme from '../../../src/theme.js'
+
+const { animation } = theme
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>Tailwind CSS Animations</h1>
+		<h2>Plugin for Tailwind CSS</h2>
+		<div>
+			<code>code of pakage of npm</code>
+		</div>
+
+		<section class="max-5xl grid grid-cols-3 gap-4">
+			{
+				Object.keys(animation).map(animationKey => {
+					return (
+						<article class="col-span-1 border rounded border-gray" data-class={animationKey}>
+							
+						</article>
+					)
+				})
+			}
+		</section>
+	</main>
+</Layout>
