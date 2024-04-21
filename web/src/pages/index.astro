@@ -37,15 +37,14 @@ const { animation } = theme
 	const $articles = document.querySelectorAll('article')
 	$articles.forEach(($article) => {
 		const animationKey = $article.getAttribute('data-class')
-		console.log($article);
 		const animationClass = `animate-${animationKey}`
-		const $box = $article.querySelector('span')
+		const box = $article.querySelector('span')
 
 		$article.addEventListener('mouseenter', () => {
-			$box.classList.add(animationClass)
+			box.classList.add(animationClass)
 		})
 		$article.addEventListener('mouseleave', () => {
-			$box.classList.remove(animationClass)
+			box.classList.remove(animationClass)
 		})		
 	})
 </script>

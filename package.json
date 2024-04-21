@@ -1,6 +1,6 @@
 {
-  "name": "@3s/tailwind-animations",
-  "version": "0.0.1",
+  "name": "@jose-sissa-3s/tailwind-animations",
+  "version": "0.0.4",
   "description": "Tailwind CSS plugin to add animations to your wbseites",
   "main": "./src/index.js",
   "type": "module",
@@ -13,9 +13,10 @@
   "devDependencies": {
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
+    "@csstools/postcss-minify": "^1.1.1",
     "vitest": "^1.5.0"
   },
-  "dependencies": {
-    "@csstools/postcss-minify": "^1.1.1"
+  "peerDependencies": {
+    "tailwindcss": "^3.0.0"
   }
 }
