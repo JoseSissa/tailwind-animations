@@ -6,6 +6,7 @@ const { animation } = theme
 ---
 
 <Layout title="Welcome to Astro.">
+	<wc-toast></wc-toast>
 	<main>
 		<header class="max-w-4xl mx-auto flex items-center justify-center flex-col">
 			<h1 class="font-semibold text-4xl pt-10 pb-5">Tailwind CSS Animations</h1>
@@ -34,17 +35,34 @@ const { animation } = theme
 </Layout>
 
 <script>
-	const $articles = document.querySelectorAll('article')
-	$articles.forEach(($article) => {
-		const animationKey = $article.getAttribute('data-class')
-		const animationClass = `animate-${animationKey}`
-		const box = $article.querySelector('span')
+	import { toast } from 'wc-toast'
 
-		$article.addEventListener('mouseenter', () => {
+	const articles = document.querySelectorAll('article')
+	articles.forEach((article) => {
+		const animationKey = article.getAttribute('data-class')
+		const animationClass = `animate-${animationKey}`
+		const box = article.querySelector('span')
+
+		article.addEventListener('mouseenter', () => {
 			box.classList.add(animationClass)
 		})
-		$article.addEventListener('mouseleave', () => {
+		article.addEventListener('mouseleave', () => {
 			box.classList.remove(animationClass)
-		})		
+		})
+		
+		article.addEventListener('click', () => {
+			const animationValue = `animate-${article.getAttribute('data-class')}`
+			navigator.clipboard.writeText(animationValue)
+
+			toast("Copied to clipboard!", 
+			{
+				theme: {
+					type: "light",
+				},
+				icon: {
+					type: 'success'
+				}
+			})
+		})
 	})
 </script>
