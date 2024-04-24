@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import theme from '../../../src/theme.js'
+import CopyIcon from '../components/icons/copyIcon.astro'
 
 const { animation } = theme
 ---
@@ -12,7 +13,7 @@ const { animation } = theme
 			<h1 class="font-semibold text-4xl pt-10 pb-5">Tailwind CSS Animations</h1>
 			<h2 class="font-medium opacity-80">Plugin for Tailwind CSS</h2>
 			<div id="command-install"class="mt-10 mb-5 py-3 px-4 border-[1px] rounded-[4px] cursor-pointer">
-				<code>npm i @jose-sissa-3s/tailwind-animations</code>
+				<code class="flex items-center gap-4">npm i @jose-sissa-3s/tailwind-animations <CopyIcon styles="inline-block" /></code>
 			</div>
 		</header>
 
@@ -20,7 +21,8 @@ const { animation } = theme
 			{
 				Object.keys(animation).map(animationKey => {
 					return (
-						<article class="col-span-1 border rounded border-gray-200 hover:border-gray-400 hover:shadow transition cursor-pointer" data-class={animationKey}>
+						<article class="relative col-span-1 border rounded border-gray-200 hover:border-gray-400 hover:shadow transition cursor-pointer" data-class={animationKey}>
+							<CopyIcon styles="absolute top-2 right-2" />
 							<div class="p-4 flex gap-4 items-center justify-center flex-col w-full h-full">
 								<span class="w-16 h-16 bg-gray-200 rounded-md flex items-center justify-center">
 								</span>
