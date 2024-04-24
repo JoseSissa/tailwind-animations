@@ -51,9 +51,17 @@ describe("tailwindcss-animations plugins", () => {
 
     it('use a timing function animation', async () => {
         const css = await generatePluginCss({
-          content: '<div class="animate-linear">Hello</div>'
+            content: '<div class="animate-linear">Hello</div>'
         })
-    
+
         expect(css).toMatch('.animate-linear{animation-timing-function:linear}')
-      })
+    })
+
+    it('use a fill mode animation', async () => {
+        const css = await generatePluginCss({
+            content: '<div class="animate-fill-mode-forwards">Hello</div>'
+        })
+
+        expect(css).toMatch('.animate-fill-mode-forwards{animation-fill-mode:forwards}')
+    })
 });

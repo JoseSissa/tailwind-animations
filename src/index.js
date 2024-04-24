@@ -10,7 +10,8 @@ const pluginCreator = (api) => {
     // Refactorizando cada uno de los matchUtilities para no repetir código
     const dynamicUtils = {
         'animate-delay': { css: 'animation-delay', values: theme('animationDelay') },
-        'animate-duration': { css: 'animation-duration', values: theme('animationDuration') }
+        'animate-duration': { css: 'animation-duration', values: theme('animationDuration') },
+        'animate-fill-mode': { css: 'animation-fill-mode', values: theme('animationFillMode') }
     }
 
     // matchUtilities({

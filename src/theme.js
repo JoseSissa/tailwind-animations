@@ -453,5 +453,11 @@ export default {
         800: '800ms',
         900: '900ms',
         1000: '1000ms'
-      }
+      },
+      animationFillMode: {
+        none: 'none',
+        forwards: 'forwards',
+        backwards: 'backwards',
+        both: 'both'
+      },
 }
