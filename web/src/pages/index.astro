@@ -11,8 +11,8 @@ const { animation } = theme
 		<header class="max-w-4xl mx-auto flex items-center justify-center flex-col">
 			<h1 class="font-semibold text-4xl pt-10 pb-5">Tailwind CSS Animations</h1>
 			<h2 class="font-medium opacity-80">Plugin for Tailwind CSS</h2>
-			<div class="mt-10 mb-5 py-3 px-4 border-[1px] rounded-[4px]">
-				<code class="">npm i @jose-sissa-3s/tailwind-animations</code>
+			<div id="command-install"class="mt-10 mb-5 py-3 px-4 border-[1px] rounded-[4px] cursor-pointer">
+				<code>npm i @jose-sissa-3s/tailwind-animations</code>
 			</div>
 		</header>
 
@@ -20,7 +20,7 @@ const { animation } = theme
 			{
 				Object.keys(animation).map(animationKey => {
 					return (
-						<article class="col-span-1 border rounded border-gray-200 hover:border-gray-400 hover:shadow transition cursor-crosshair" data-class={animationKey}>
+						<article class="col-span-1 border rounded border-gray-200 hover:border-gray-400 hover:shadow transition cursor-pointer" data-class={animationKey}>
 							<div class="p-4 flex gap-4 items-center justify-center flex-col w-full h-full">
 								<span class="w-16 h-16 bg-gray-200 rounded-md flex items-center justify-center">
 								</span>
@@ -38,6 +38,8 @@ const { animation } = theme
 	import { toast } from 'wc-toast'
 
 	const articles = document.querySelectorAll('article')
+	const commandInstall = document.getElementById('command-install')
+
 	articles.forEach((article) => {
 		const animationKey = article.getAttribute('data-class')
 		const animationClass = `animate-${animationKey}`
@@ -64,5 +66,19 @@ const { animation } = theme
 				}
 			})
 		})
+	})
+
+	commandInstall.addEventListener('click', () => {
+		navigator.clipboard.writeText('npm i @jose-sissa-3s/tailwind-animations')
+		toast("Copied to clipboard!", 
+			{
+				theme: {
+					type: "light",
+				},
+				icon: {
+					type: 'success'
+				}
+			}
+		)
 	})
 </script>

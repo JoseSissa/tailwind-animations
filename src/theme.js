@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 export default {
     animation: {
-        'background-shine': 'background-shine 2s linear infinite both',
+        'blurred-fade-in': 'blurred-fade-in 0.9s ease-in-out both',
         'fade-in': 'fade-in 0.6s ease-in both',
         'fade-out': 'fade-out 0.6s ease-out both',
         'slide-in-top': 'slide-in-top 0.6s ease-out both',
@@ -460,4 +460,11 @@ export default {
         backwards: 'backwards',
         both: 'both'
       },
+      animationIterationCount: {
+        none: '0',
+        once: '1',
+        twice: '2',
+        thrice: '3',
+        infinite: 'infinite'
+      }
 }

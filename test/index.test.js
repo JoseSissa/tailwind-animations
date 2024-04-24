@@ -64,4 +64,20 @@ describe("tailwindcss-animations plugins", () => {
 
         expect(css).toMatch('.animate-fill-mode-forwards{animation-fill-mode:forwards}')
     })
+
+    it('use a custom animation iteration count', async () => {
+        const css = await generatePluginCss({
+            content: '<div class="animate-iteration-count-twice">Hello</div>'
+        })
+
+        expect(css).toMatch('.animate-iteration-count-twice{animation-iteration-count:2}')
+    })
+
+    it('use a custom animation iteration count with an arbitrary value', async () => {
+        const css = await generatePluginCss({
+            content: '<div class="animate-iteration-count-[10]">Hello</div>'
+        })
+
+        expect(css).toMatch('.animate-iteration-count-\\[10\\]{animation-iteration-count:10}')
+    })
 });

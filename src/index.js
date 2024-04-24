@@ -11,7 +11,8 @@ const pluginCreator = (api) => {
     const dynamicUtils = {
         'animate-delay': { css: 'animation-delay', values: theme('animationDelay') },
         'animate-duration': { css: 'animation-duration', values: theme('animationDuration') },
-        'animate-fill-mode': { css: 'animation-fill-mode', values: theme('animationFillMode') }
+        'animate-fill-mode': { css: 'animation-fill-mode', values: theme('animationFillMode') },
+        'animate-iteration-count': { css: 'animation-iteration-count', values: theme('animationIterationCount') }
     }
 
     // matchUtilities({
