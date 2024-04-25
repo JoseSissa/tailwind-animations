@@ -17,6 +17,14 @@ const { version } = pkg
 			<div id="command-install"class="mt-10 mb-5 py-3 px-4 border-[1px] rounded-[4px] cursor-pointer">
 				<code class="flex items-center gap-4">npm i @jose-sissa-3s/tailwind-animations <CopyIcon styles="inline-block" /></code>
 			</div>
+			<section class='mb-6 flex flex-col items-center'>
+				<p class='text-xl font-medium mb-2'>Animate all</p>
+				<label class='relative inline-flex cursor-pointer items-center'>
+					<input type='checkbox' value='' class='peer sr-only' id='animate' />
+					<div class="rtl:peer-checked:after:-translate-x- peer h-8 w-16 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-7 after:w-7 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-zinc-600 peer-checked:after:translate-x-[31px] peer-checked:after:border-white peer-focus:outline-none dark:bg-zinc-300">
+					</div>					
+				</label>
+			</section>
 		</header>
 
 		<section class="max-w-4xl mx-auto grid grid-cols-3 gap-4">
@@ -43,6 +51,7 @@ const { version } = pkg
 
 	const articles = document.querySelectorAll('article')
 	const commandInstall = document.getElementById('command-install')
+	const animateAll = document.getElementById('animate')
 
 	articles.forEach((article) => {
 		const animationKey = article.getAttribute('data-class')
@@ -69,6 +78,16 @@ const { version } = pkg
 					type: 'success'
 				}
 			})
+		})
+
+		animateAll.addEventListener('change', () => {
+			if (animateAll.checked) {
+				box.classList.add(animationClass)
+				box.style.animationIterationCount = 'infinite'
+			} else {
+				box.classList.remove(animationClass)
+				box.style.animationIterationCount = 'unset'
+			}
 		})
 	})
 
