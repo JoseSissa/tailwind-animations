@@ -2,8 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import theme from '../../../src/theme.js'
 import CopyIcon from '../components/icons/copyIcon.astro'
+import pkg from '../../../package.json'
 
 const { animation } = theme
+const { version } = pkg
 ---
 
 <Layout title="Welcome to Astro.">
