@@ -1,6 +1,6 @@
 {
   "name": "@jose-sissa-3s/tailwind-animations",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Tailwind CSS plugin to add animations to your wbseites",
   "main": "./src/index.js",
   "type": "module",
