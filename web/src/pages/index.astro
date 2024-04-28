@@ -18,10 +18,11 @@ const { version } = pkg
 			<div id="command-install"class="lg:max-w-sm w-full mt-10 mb-5 py-3 px-4 text-sm border-[1px] rounded-[4px] cursor-pointer">
 				<code class="flex items-center gap-4">npm i @jose-sissa-3s/tailwind-animations <CopyIcon styles="inline-block" /></code>
 			</div>
-			<div class='lg:max-w-sm flex w-full max-w-md items-center gap-x-2 rounded-xl bg-[#0d1117] py-3 pl-4 pr-4 text-center text-white backdrop-blur'>
+			<div class='lg:max-w-sm flex w-full max-w-md mb-5 items-center gap-x-2 rounded-xl bg-[#0d1117] py-3 pl-4 pr-4 text-center text-white backdrop-blur'>
 				<pre
 					class='flex text-left text-xs'>
 					<Code wrap={true} theme="github-dark-default" lang="js" code={`import animations from '@midudev/tailwind-animations'
+
 export default {
 	// ...rest of the options
 	plugins: [animations],
@@ -39,7 +40,7 @@ export default {
 			<section class='mb-6 grid grid-flow-col gap-6 columns-4 items-center justify-center'>
 				<label for="duration" class="block mb-2 text-sm font-medium text-white">
 				  Duration
-				  <select name="duration" id="duration" class="mt-2 min-w-36 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+				  <select name="duration" id="duration" class="mt-2 min-w-24 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
 					{Object.entries(animationDuration).map(([key, value])=> {
 					  return (<option class="bg-black" value={value}>{key}</option>)
 					})}
@@ -47,7 +48,7 @@ export default {
 				</label>
 				<label for="delay" class="block mb-2 text-sm font-medium text-white">
 				  Delay
-				  <select name="delay" id="delay" class="mt-2 min-w-36 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+				  <select name="delay" id="delay" class="mt-2 min-w-24 border border-gray-300 text-gray-900 text-sm rounded-lg  block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
 					{Object.entries(animationDelay).map(([key, value])=> {
 					  return (<option class="bg-black" value={value}>{key}</option>)
 					})}
@@ -55,7 +56,7 @@ export default {
 				</label>
 				<label for="steps" class="block mb-2 text-sm font-medium text-white">
 				  Steps
-				  <select name="steps" id="steps" class="mt-2 min-w-36 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+				  <select name="steps" id="steps" class="mt-2 min-w-24 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
 					{Object.entries(animationSteps).map(([key, value])=> {
 					  return (<option class="bg-black" value={value}>{key}</option>)
 					})}
