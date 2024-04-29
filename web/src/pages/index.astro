@@ -9,16 +9,16 @@ const { animation, animationDuration, animationSteps, animationDelay } = theme
 const { version } = pkg
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="3s - Tailwind Animations">
 	<wc-toast></wc-toast>
 	<main class="px-3 pb-10">
 		<header class="max-w-4xl mx-auto flex items-center justify-center flex-col">
-			<h1 class="font-semibold text-4xl pt-10 pb-5">Tailwind CSS Animations</h1>
-			<h2 class="font-medium opacity-80">Plugin for Tailwind CSS <code> Version {version}</code></h2>
-			<div id="command-install"class="lg:max-w-sm w-full mt-10 mb-5 py-3 px-4 text-sm border-[1px] rounded-[4px] cursor-pointer">
-				<code class="flex items-center gap-4">npm i @jose-sissa-3s/tailwind-animations <CopyIcon styles="inline-block" /></code>
+			<h1 class="font-semibold text-4xl pt-10 pb-10 text-center">Tailwind CSS Animations</h1>
+			<h2 class="w-max mb-10 font-medium opacity-80">Plugin for Tailwind CSS <code class="text-xs"> Version {version}</code></h2>
+			<div id="command-install"class="max-w-96 lg:max-w-sm w-full mb-10 py-3 px-4 text-sm border-[1px] rounded cursor-pointer">
+				<code class="flex items-center justify-center gap-4 text-xs">npm i @jose-sissa-3s/tailwind-animations <CopyIcon styles="inline-block" /></code>
 			</div>
-			<div class='lg:max-w-sm flex w-full max-w-md mb-5 items-center gap-x-2 rounded-xl bg-[#0d1117] py-3 pl-4 pr-4 text-center text-white backdrop-blur'>
+			<div class='max-w-96 lg:max-w-sm flex w-full mb-10 items-center gap-x-2 rounded bg-[#0d1117] py-3 pl-4 pr-4 text-center text-white backdrop-blur'>
 				<pre
 					class='flex text-left text-xs'>
 					<Code wrap={true} theme="github-dark-default" lang="js" code={`import animations from '@midudev/tailwind-animations'
@@ -29,15 +29,18 @@ export default {
 }`} />
 				</pre>
 			</div>
-			<section class='mb-6 flex flex-col items-center'>
-				<p class='text-xl font-medium mb-2'>Animate all</p>
+		</header>
+
+		<section class="sticky lg:relative top-0 mb-10 pt-3 backdrop-blur-sm z-10">
+			<div class='mb-6 flex flex-col items-center'>
+				<h4 class='text-xl font-medium mb-2'>Animate all</h4>
 				<label class='relative inline-flex cursor-pointer items-center'>
 					<input type='checkbox' value='' class='peer sr-only' id='animate' />
-					<div class="rtl:peer-checked:after:-translate-x- peer h-8 w-16 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-7 after:w-7 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-zinc-600 peer-checked:after:translate-x-[31px] peer-checked:after:border-white peer-focus:outline-none dark:bg-zinc-300">
+					<div class="rtl:peer-checked:after:-translate-x- peer h-6 w-14 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-zinc-600 peer-checked:after:translate-x-[31px] peer-checked:after:border-white peer-focus:outline-none dark:bg-zinc-300">
 					</div>					
 				</label>
-			</section>
-			<section class='mb-6 grid grid-flow-col gap-6 columns-4 items-center justify-center'>
+			</div>
+			<div class='pb-6 grid grid-flow-col gap-6 columns-4 items-center justify-center'>
 				<label for="duration" class="block mb-2 text-sm font-medium text-white">
 				  Duration
 				  <select name="duration" id="duration" class="mt-2 min-w-24 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
@@ -62,10 +65,11 @@ export default {
 					})}
 				  </select>
 				</label>
-			  </section>
-		</header>
+			</div>
+		</section>
 
 		<section class="max-w-sm
+				md:max-w-2xl
 				lg:max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 			{
 				Object.keys(animation).map(animationKey => {
