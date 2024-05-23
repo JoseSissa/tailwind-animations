@@ -94,7 +94,7 @@ export default {
 
 	const articles = document.querySelectorAll('article')
 	const commandInstall = document.getElementById('command-install')
-	const animateAll = document.getElementById('animate')
+	const animateAll = document.getElementById('animate') as HTMLInputElement
 	const duration: HTMLSelectElement = document.querySelector('#duration')
 	const steps: HTMLSelectElement = document.querySelector('#steps')
 	const delay: HTMLSelectElement = document.querySelector('#delay')
@@ -126,7 +126,7 @@ export default {
 			})
 		})
 
-		animateAll.addEventListener('change', () => {
+		animateAll.addEventListener('change', (e) => {
 			if (animateAll.checked) {
 				box.classList.add(animationClass)
 				box.style.animationIterationCount = 'infinite'
